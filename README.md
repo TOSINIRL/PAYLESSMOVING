@@ -4,13 +4,13 @@ A responsive static website for Payless Moving & Deliveries, serving the Greater
 
 ## Run locally
 
-Open `index.html` in a browser, or use a local static server from the project directory:
+From the project directory, start the local static server:
 
 ```sh
-python3 -m http.server 8000
+npm run start
 ```
 
-Then visit `http://localhost:8000`.
+Then visit `http://localhost:8080`. Stop the server with `Ctrl+C`.
 
 ## Deploy with Netlify
 

@@ -35,3 +35,23 @@ if (quoteForm && formStatus) {
     formStatus.textContent = "Thanks! Your request is being sent.";
   });
 }
+
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -35px 0px" });
+
+  document.querySelectorAll(
+    ".section-heading, .service-card, .promise-image, .promise-copy, .step, .area-inner, .final-cta-inner"
+  ).forEach((element) => {
+    element.classList.add("reveal-on-scroll");
+    revealObserver.observe(element);
+  });
+}

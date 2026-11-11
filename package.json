@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "python3 -m http.server 8080"
+    "start": "printf '\\nOpen http://localhost:8080\\n\\n' && python3 -m http.server 8080"
   }
 }
